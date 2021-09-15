@@ -8,15 +8,20 @@ interface ButtonProps {
     button: Object;
     text: Object;
   };
+  disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
   text,
   style = styles,
+  disabled = false,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={style.button}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={style.button}
+      disabled={disabled}>
       <Text style={style.text}>{text}</Text>
     </TouchableOpacity>
   );

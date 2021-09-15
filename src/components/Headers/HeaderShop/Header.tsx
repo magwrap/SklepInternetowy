@@ -8,7 +8,7 @@ export const HeaderShop: Object = ({navigation}: any) => {
     title: 'Shop',
     headerRight: () => (
       <Button
-        onPress={() => navigation.navigate('Cart')}
+        onPress={() => navigation.navigate('ShopStack', {screen: 'Cart'})}
         text={'Go to checkout'}
       />
     ),

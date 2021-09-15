@@ -3,7 +3,7 @@ import {View, ScrollView} from 'react-native';
 
 import {ShopInfo} from '@/components/ShopInfo/ShopInfo';
 import {Offers} from '@/components/Offers/Offers';
-import {Products} from '@/components/Products/Products';
+import {Products} from '@/components/HiglightedProducts/Products';
 import {styles} from './styles';
 
 interface HomeProps {
@@ -15,7 +15,7 @@ export const Home: React.FC<HomeProps> = ({navigation}) => {
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
         <ShopInfo />
-        <Offers />
+        <Offers navigation={navigation} />
 
         <Products navigation={navigation} />
       </ScrollView>

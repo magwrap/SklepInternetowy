@@ -9,5 +9,5 @@ export const calculatePrice = (cart: CalculateProps) => {
   cart.map((item: CartProductProps) => {
     finalPrice += +item.product.price * +item.quantity;
   });
-  return finalPrice;
+  return finalPrice.toFixed(2);
 };

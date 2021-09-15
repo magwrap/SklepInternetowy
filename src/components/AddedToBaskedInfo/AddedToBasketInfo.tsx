@@ -7,7 +7,8 @@ interface AddedToBasketInfoProps {}
 export const AddedToBasketInfo: React.FC<AddedToBasketInfoProps> = ({}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Dodano do koszyka</Text>
+      <Text style={styles.text}>Produkt dodany do koszyka</Text>
+      <Text style={styles.greenText}>✓</Text>
     </View>
   );
 };

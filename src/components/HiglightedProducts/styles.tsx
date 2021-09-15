@@ -1,11 +1,8 @@
-import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
+import {Colors} from '@/config/Colors';
 
 export const styles = StyleSheet.create({
-  bigText: {
-    fontSize: 30,
-    textAlign: 'center',
-  },
+  container: {},
   text: {
     fontSize: 13,
     color: Colors.blue,
@@ -17,7 +14,9 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
-  promotion: {
-    color: Colors.green,
+  bigText: {
+    fontSize: 20,
+    color: Colors.black,
+    textAlign: 'center',
   },
 });

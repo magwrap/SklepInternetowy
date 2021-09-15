@@ -13,10 +13,11 @@ interface CartProps {
 //TODO: dodac alert wyswietlajacy sie gdy nie ma zadnych produ
 export const Cart: React.FC<CartProps> = ({navigation}) => {
   const {cart} = useCartContext();
+  const emptyCart = cart.length > 1;
   return (
     <View style={styles.container}>
       <Text style={[styles.text, styles.header]}>Your Cart</Text>
-      {cart ? (
+      {emptyCart ? (
         <FlatList
           data={cart}
           keyExtractor={item => JSON.stringify(item.product.id)}
@@ -28,7 +29,7 @@ export const Cart: React.FC<CartProps> = ({navigation}) => {
         <Text>Your cart is empty</Text>
       )}
 
-      <GoToPaymentButton navigation={navigation} />
+      <GoToPaymentButton navigation={navigation} disabled={emptyCart} />
     </View>
   );
 };

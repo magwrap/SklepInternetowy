@@ -18,7 +18,7 @@ export const HeaderProduct: Object = ({route, navigation}: HeaderProps) => {
     title: route.params.data.name,
     headerRight: () => (
       <Button
-        onPress={() => navigation.navigate('Cart')}
+        onPress={() => navigation.navigate('ShopStack', {screen: 'Cart'})}
         text={'Go to checkout'}
       />
     ),

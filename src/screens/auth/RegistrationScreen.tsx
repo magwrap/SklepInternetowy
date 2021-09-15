@@ -4,6 +4,8 @@ import {TouchableOpacity, View, TextInput} from 'react-native';
 
 import {AppContainer} from '@/components/ui/AppContainer';
 import {styles} from './styles';
+import {WarningText, warningBorderColor} from '@/components/warnings/Warnings';
+import {InputField} from '@/components/InputField/InputField';
 
 interface RegistrationProps {
   navigation: any;
@@ -13,45 +15,46 @@ export const Register: React.FC<RegistrationProps> = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [viewWarnings, setViewWarnings] = useState(false);
 
   return (
     <AppContainer>
       <View style={styles.container}>
         <View style={styles.fields}>
           <Text style={[styles.text, styles.header]}>Registration Screen</Text>
-          <View style={styles.inputField}>
-            <Text style={styles.label}>Email :</Text>
-            <TextInput
-              style={styles.input}
-              value={email}
-              onChangeText={setEmail}
-              placeholder="Insert your email"
-            />
-          </View>
-          <View style={styles.inputField}>
-            <Text style={styles.label}>Password :</Text>
-            <TextInput
-              style={styles.input}
-              value={password}
-              onChangeText={setPassword}
-              placeholder="Insert your password"
-              secureTextEntry={true}
-            />
-          </View>
+          <InputField
+            name="email"
+            prop={email}
+            setProp={setEmail}
+            viewWarnings={viewWarnings}
+          />
+          <InputField
+            name="password"
+            prop={password}
+            setProp={setPassword}
+            viewWarnings={viewWarnings}
+            secureTextEntry={true}
+          />
 
-          <View style={styles.inputField}>
-            <Text style={styles.label}>Confirm Password :</Text>
-            <TextInput
-              style={styles.input}
-              value={passwordConfirm}
-              onChangeText={setPasswordConfirm}
-              placeholder="Confirm your password"
-              secureTextEntry={true}
-            />
-          </View>
+          <InputField
+            name="confirm password"
+            prop={passwordConfirm}
+            setProp={setPasswordConfirm}
+            viewWarnings={viewWarnings}
+            secureTextEntry={true}
+            placeholder="Confirm your password"
+          />
         </View>
         <View style={styles.buttons}>
-          <TouchableOpacity onPress={() => {}} style={styles.button}>
+          <TouchableOpacity
+            onPress={() => {
+              if (email && password && passwordConfirm) {
+                //rejestracja uzytkownika
+              } else {
+                setViewWarnings(true);
+              }
+            }}
+            style={styles.button}>
             <Text style={styles.text}>REGISTER</Text>
           </TouchableOpacity>
           <TouchableOpacity

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {Product} from '@/components/Product/Product';
+import {Product} from '@/components/ProductItem/Product';
 
 import {useProductContext} from '@/hooks/ProductProvider';
 

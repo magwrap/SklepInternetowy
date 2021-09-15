@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   button: {
     position: 'absolute',
     right: 15,
-    bottom: 15,
+    top: 15,
     borderWidth: 1,
     padding: 10,
     borderRadius: 18,

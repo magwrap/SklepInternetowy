@@ -1,22 +1,34 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {Card} from '@/components/Card/Card';
+import {styles} from './styles';
+import {useProductContext} from '@/hooks/ProductProvider';
+import {Product} from '../ProductItem/Product';
+import {useCartContext} from '@/hooks/CartProvider';
+import {ProductProps} from '@/models/product';
 
-interface OffersProps {}
-
-export const Offers: React.FC<OffersProps> = ({}) => {
+interface OffersProps {
+  navigation: any;
+}
+//TODO: dodac funkcje szukajacego produktu z id na przecenie
+export const Offers: React.FC<OffersProps> = ({navigation}) => {
+  const {dummyData} = useProductContext();
+  const {updateCart} = useCartContext();
+  const item: ProductProps = dummyData[5];
+  const promotion = '19% zniżki!';
   return (
     <Card>
-      <Text style={{fontSize: 30}}>Oferta dnia</Text>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Text>
+      <Text style={styles.bigText}>Oferta dnia</Text>
+      <Text style={[styles.bigText, styles.promotion]}>{promotion}</Text>
+      <Product navigation={navigation} data={item} key={item.id} />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('ShopStack', {screen: 'Cart'});
+          updateCart(item, 1);
+        }}
+        style={styles.link}>
+        <Text style={styles.text}>Buy Now {'>>'}</Text>
+      </TouchableOpacity>
     </Card>
   );
 };

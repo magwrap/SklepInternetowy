@@ -26,7 +26,7 @@ export const ViewProduct: React.FC<ProductScreenProps> = ({route}) => {
         <View style={[styles.section, styles.important]}>
           <View style={styles.name}>
             <Text style={[styles.bigFont, styles.title]}>{data.name}</Text>
-            <Text>{data.price} PLN</Text>
+            <Text style={styles.price}>{data.price} PLN</Text>
           </View>
           <AddToCartButton item={data} />
         </View>

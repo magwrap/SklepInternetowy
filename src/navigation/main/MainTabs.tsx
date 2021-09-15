@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeStack} from './HomeStack';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {ShopStack} from './ShopStack';
+import {Colors} from '@/config/Colors';
 
 type MainTabsParamList = {
   HomeStack: undefined;
@@ -24,14 +25,16 @@ export const MainTabs: React.FC = ({}) => {
           } else if (route.name === 'ShopStack') {
             iconName = focused ? 'ios-list-box' : 'ios-list';
           }
-
-          // You can return any component that you like here!
           return <FontAwesome5 name={'comments'} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: Colors.yellow,
+        inactiveTintColor: Colors.realWhite,
+        style: {
+          backgroundColor: Colors.black,
+          paddingBottom: 5,
+        },
       }}>
       <Tabs.Screen name="HomeStack" component={HomeStack} />
       <Tabs.Screen name="ShopStack" component={ShopStack} />

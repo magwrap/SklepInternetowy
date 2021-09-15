@@ -36,4 +36,9 @@ export const styles = StyleSheet.create({
   name: {
     justifyContent: 'center',
   },
+  price: {
+    fontStyle: 'italic',
+    fontSize: 15,
+    marginLeft: 5,
+  },
 });

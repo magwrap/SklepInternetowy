@@ -4,6 +4,7 @@ import {Home} from '@/screens/home/Home.screen';
 import {ViewProduct} from '@/screens/home/ProductScreen/ProductScreen';
 import {HeaderHome} from '@/components/Headers/HeaderHome/Header';
 import {HeaderProduct} from '@/components/Headers/HeaderProduct/Header';
+import {cartRoutes} from './cartRoutes';
 
 type MainStackParamList = {
   Home: undefined;
@@ -21,6 +22,7 @@ export const HomeStack: React.FC = () => {
         component={ViewProduct}
         options={HeaderProduct}
       />
+      {cartRoutes(Stack)}
     </Stack.Navigator>
   );
 };

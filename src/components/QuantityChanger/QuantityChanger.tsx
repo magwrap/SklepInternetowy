@@ -10,19 +10,21 @@ interface QuantityChangerProps {
     countButtons: Object;
     textCount: Object;
   };
+  goBelowOne?: boolean;
 }
 
 export const QuantityChanger: React.FC<QuantityChangerProps> = ({
   quantity,
   setQuantity,
   style,
+  goBelowOne = false,
 }) => {
   const goUp = () => {
     setQuantity(quantity + 1);
   };
 
   const goDown = () => {
-    if (quantity > 1) {
+    if (quantity > 1 || goBelowOne) {
       setQuantity(quantity - 1);
     }
   };

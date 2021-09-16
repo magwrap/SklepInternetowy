@@ -34,6 +34,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({children}) => {
       }
       return {product: item.product, quantity: quant};
     });
+    // .filter(item => {
+    //   return item.quantity > 0;
+    // });
+
     if (inCart) {
       setCart([...newCart]);
     } else {

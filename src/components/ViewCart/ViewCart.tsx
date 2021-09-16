@@ -47,6 +47,7 @@ export const ViewCart: React.FC<ViewCartProps> = ({item}) => {
           quantity={quantity}
           setQuantity={changeQuantity}
           style={styles}
+          goBelowOne={true}
         />
       </View>
     </View>

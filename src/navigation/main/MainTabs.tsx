@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeStack} from './HomeStack';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {ShopStack} from './ShopStack';
 import {Colors} from '@/config/Colors';
 
@@ -25,7 +25,7 @@ export const MainTabs: React.FC = ({}) => {
           } else if (route.name === 'ShopStack') {
             iconName = focused ? 'ios-list-box' : 'ios-list';
           }
-          return <FontAwesome5 name={'comments'} size={size} color={color} />;
+          return <AntDesign name={'forward'} size={size} color={color} />;
         },
       })}
       tabBarOptions={{

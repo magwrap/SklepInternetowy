@@ -5,9 +5,11 @@ import {KeyboardAvoidingView, Platform, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {styles} from './styles';
 
-interface PaymentProps {}
+interface PaymentProps {
+  navigation: any;
+}
 
-export const Payment: React.FC<PaymentProps> = ({}) => {
+export const Payment: React.FC<PaymentProps> = ({navigation}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -69,15 +71,16 @@ export const Payment: React.FC<PaymentProps> = ({}) => {
           text="next step"
           onPress={() => {
             if (
-              firstName &&
-              lastName &&
-              email &&
-              postcode &&
-              adress &&
-              city &&
-              phone
+              firstName
+              // &&
+              // lastName &&
+              // email &&
+              // postcode &&
+              // adress &&
+              // city &&
+              // phone
             ) {
-              //navigation.navigate("");
+              navigation.navigate('DeliveryAndPay');
             } else {
               setViewWarnings(true);
             }

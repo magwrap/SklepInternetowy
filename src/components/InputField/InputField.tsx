@@ -35,6 +35,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         onChangeText={setProp}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
+        maxLength={30}
       />
       <WarningText prop={prop} viewWarnings={viewWarnings} />
     </View>

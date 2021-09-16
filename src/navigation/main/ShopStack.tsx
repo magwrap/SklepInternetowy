@@ -4,13 +4,12 @@ import {ViewProduct} from '@/screens/home/ProductScreen/ProductScreen';
 import {HeaderProduct} from '@/components/Headers/HeaderProduct/Header';
 import {Shop} from '@/screens/shop/ShopScreen';
 import {HeaderShop} from '@/components/Headers/HeaderShop/Header';
-import {cartRoutes} from './cartRoutes';
+import {CartStack} from './CartStack';
 
 type ShopStackParamList = {
   Shop: undefined;
   ViewProduct: undefined;
-  Cart: undefined;
-  Payment: undefined;
+  CartStack: undefined;
 };
 
 interface ShopStackProps {}
@@ -26,7 +25,13 @@ export const ShopStack: React.FC<ShopStackProps> = ({}) => {
         component={ViewProduct}
         options={HeaderProduct}
       />
-      {cartRoutes(Stack)}
+      <Stack.Screen
+        name="CartStack"
+        component={CartStack}
+        options={{
+          header: () => null,
+        }}
+      />
     </Stack.Navigator>
   );
 };

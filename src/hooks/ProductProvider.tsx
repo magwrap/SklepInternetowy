@@ -15,6 +15,7 @@ const ProductContext = createContext<{
   ],
 });
 
+//TODO: dodac: previousprice(jesli produkt jest na przecenie), specyfikacje(array obiektow- {ram : 8}, {pamiec : 64} ...)
 export const useProductContext = () => useContext(ProductContext);
 
 interface ProductProviderProps {

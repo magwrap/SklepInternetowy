@@ -6,6 +6,7 @@ import {useProductContext} from '@/hooks/ProductProvider';
 import {Product} from '../ProductItem/Product';
 import {useCartContext} from '@/hooks/CartProvider';
 import {ProductProps} from '@/models/product';
+import {goToCart} from '@/hooks/goToCart';
 
 interface OffersProps {
   navigation: any;
@@ -23,7 +24,7 @@ export const Offers: React.FC<OffersProps> = ({navigation}) => {
       <Product navigation={navigation} data={item} key={item.id} />
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('ShopStack', {screen: 'Cart'});
+          goToCart(navigation);
           updateCart(item, 1);
         }}
         style={styles.link}>

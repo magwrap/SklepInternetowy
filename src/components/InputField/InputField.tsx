@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TextInput} from 'react-native';
 import {warningBorderColor, WarningText} from '@/components/warnings/Warnings';
 import {styles} from './styles';
+import {texts} from '@/config/Texts';
 
 interface InputFieldProps {
   name: string;
@@ -23,7 +24,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   setProp,
   viewWarnings,
   style = styles,
-  placeholder = `Insert your ${name}`,
+  placeholder = `${texts.inputFieldPlaceholder} ${name}`,
   secureTextEntry = false,
 }) => {
   return (

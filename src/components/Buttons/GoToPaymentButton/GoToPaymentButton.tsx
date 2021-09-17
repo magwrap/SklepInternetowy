@@ -1,4 +1,5 @@
 import {Button} from '@/components/Button';
+import {texts} from '@/config/Texts';
 import React from 'react';
 import {styles} from './styles';
 
@@ -13,7 +14,7 @@ export const GoToPaymentButton: React.FC<GoToPaymentButtonProps> = ({
 }) => {
   return (
     <Button
-      text="Buy"
+      text={texts.buy}
       onPress={() => {
         navigation.navigate('Payment');
       }}

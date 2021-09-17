@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Text} from '@/components/atoms';
-import {TouchableOpacity, View, TextInput} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 
 import {AppContainer} from '@/components/ui/AppContainer';
 import {useAuthContext} from '@/hooks/AuthProvider';
 
 import {styles} from './styles';
-import {WarningText, warningBorderColor} from '@/components/warnings/Warnings';
 import {InputField} from '@/components/InputField/InputField';
+import {texts} from '@/config/Texts';
 
 interface LoginProps {
   navigation: any;
@@ -23,16 +23,18 @@ export const Login: React.FC<LoginProps> = ({navigation}) => {
     <AppContainer>
       <View style={styles.container}>
         <View style={styles.fields}>
-          <Text style={[styles.text, styles.header]}>Login Screen</Text>
+          <Text style={[styles.text, styles.header]}>
+            {texts.auth.loginScreen}
+          </Text>
 
           <InputField
-            name="email"
+            name={texts.auth.email}
             prop={email}
             setProp={setEmail}
             viewWarnings={viewWarnings}
           />
           <InputField
-            name="password"
+            name={texts.auth.password}
             prop={password}
             setProp={setPassword}
             viewWarnings={viewWarnings}
@@ -49,13 +51,13 @@ export const Login: React.FC<LoginProps> = ({navigation}) => {
               }
             }}
             style={styles.button}>
-            <Text style={styles.text}>LOGIN</Text>
+            <Text style={styles.text}>{texts.auth.loginButton}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => navigation.navigate('Register')}
             style={styles.button}>
-            <Text style={styles.text}>Sign Up</Text>
+            <Text style={styles.text}>{texts.auth.goToRegisterButton}</Text>
           </TouchableOpacity>
         </View>
       </View>

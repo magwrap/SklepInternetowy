@@ -1,16 +1,15 @@
 import React from 'react';
 import {useAuthContext} from '@/hooks/AuthProvider';
 
-import {Text, TouchableOpacity} from 'react-native';
-import {styles} from './styles';
 import {headerStyling} from '../headerStyling';
 import {Button} from '@/components/Button';
+import {texts} from '@/config/Texts';
 
 export const HeaderHome: Object = ({}) => {
   const {logout} = useAuthContext();
   return {
-    title: 'Home',
-    headerRight: () => <Button onPress={() => logout()} text={'Logout'} />,
+    title: texts.headerTitles.Home,
+    headerRight: () => <Button onPress={() => logout()} text={texts.logout} />,
     ...headerStyling,
   };
 };

@@ -16,12 +16,23 @@ const Stack = createStackNavigator<CartStackParamList>();
 export const CartStack: React.FC = () => {
   return (
     <Stack.Navigator initialRouteName="Cart">
-      <Stack.Screen name="Cart" component={Cart} options={HeaderCart} />
-      <Stack.Screen name="Payment" component={Payment} options={HeaderCart} />
+      <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={HeaderCart}
+        initialParams={{name: 'Cart'}}
+      />
+      <Stack.Screen
+        name="Payment"
+        component={Payment}
+        options={HeaderCart}
+        initialParams={{name: 'Payment'}}
+      />
       <Stack.Screen
         name="DeliveryAndPay"
         component={DeliveryAndPay}
         options={HeaderCart}
+        initialParams={{name: 'DeliveryAndPay'}}
       />
     </Stack.Navigator>
   );

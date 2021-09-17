@@ -7,6 +7,7 @@ import {Product} from '../ProductItem/Product';
 import {useCartContext} from '@/hooks/CartProvider';
 import {ProductProps} from '@/models/product';
 import {goToCart} from '@/hooks/goToCart';
+import {texts} from '@/config/Texts';
 
 interface OffersProps {
   navigation: any;
@@ -16,11 +17,12 @@ export const Offers: React.FC<OffersProps> = ({navigation}) => {
   const {dummyData} = useProductContext();
   const {updateCart} = useCartContext();
   const item: ProductProps = dummyData[5];
-  const promotion = '19% zniżki!';
   return (
     <Card>
-      <Text style={styles.bigText}>Oferta dnia</Text>
-      <Text style={[styles.bigText, styles.promotion]}>{promotion}</Text>
+      <Text style={styles.bigText}>{texts.offersHeadline}</Text>
+      <Text style={[styles.bigText, styles.promotion]}>
+        {texts.offersPromotion}
+      </Text>
       <Product navigation={navigation} data={item} key={item.id} />
       <TouchableOpacity
         onPress={() => {
@@ -28,7 +30,7 @@ export const Offers: React.FC<OffersProps> = ({navigation}) => {
           updateCart(item, 1);
         }}
         style={styles.link}>
-        <Text style={styles.text}>Buy Now {'>>'}</Text>
+        <Text style={styles.text}>{texts.offersBuyNow}</Text>
       </TouchableOpacity>
     </Card>
   );

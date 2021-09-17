@@ -3,6 +3,7 @@ import {Text, View, TouchableOpacity} from 'react-native';
 import {useCartContext} from '@/hooks/CartProvider';
 import {calculatePrice} from '@/hooks/priceModule';
 import {styles} from './styles';
+import {texts} from '@/config/Texts';
 
 interface CartListFooterProps {}
 
@@ -12,9 +13,11 @@ export const CartListFooter: React.FC<CartListFooterProps> = ({}) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.price}>Total: {finalPrice} zł</Text>
+        <Text style={styles.price}>
+          {texts.cartListFooter.total} {finalPrice} {texts.currency}
+        </Text>
         <TouchableOpacity onPress={() => clearCart()}>
-          <Text style={styles.delete}>Empty basket</Text>
+          <Text style={styles.delete}>{texts.cartListFooter.emptyBasket}</Text>
         </TouchableOpacity>
       </View>
     </View>

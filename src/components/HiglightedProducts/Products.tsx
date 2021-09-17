@@ -4,6 +4,7 @@ import {Card} from '@/components/Card/Card';
 import {useProductContext} from '@/hooks/ProductProvider';
 import {TouchableOpacity, Text} from 'react-native';
 import {styles} from './styles';
+import {texts} from '@/config/Texts';
 
 interface ProductsProps {
   navigation: any;
@@ -14,7 +15,7 @@ export const Products: React.FC<ProductsProps> = ({navigation}) => {
   const maxProducts = 3;
   return (
     <Card>
-      <Text style={styles.bigText}>Top Selling</Text>
+      <Text style={styles.bigText}>{texts.productsTopSelling}</Text>
       {dummyData.map((item: Object, index: number) => {
         if (index < maxProducts) {
           return <Product navigation={navigation} data={item} key={index} />;
@@ -24,7 +25,7 @@ export const Products: React.FC<ProductsProps> = ({navigation}) => {
       <TouchableOpacity
         onPress={() => navigation.navigate('ShopStack', {screen: 'Shop'})}
         style={styles.link}>
-        <Text style={styles.text}>More {'>>'}</Text>
+        <Text style={styles.text}>{texts.productsMore}</Text>
       </TouchableOpacity>
     </Card>
   );

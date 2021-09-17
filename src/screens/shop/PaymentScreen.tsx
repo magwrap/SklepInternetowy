@@ -1,5 +1,6 @@
 import {Button} from '@/components/Button';
 import {InputField} from '@/components/InputField/InputField';
+import {texts} from '@/config/Texts';
 import React, {useState} from 'react';
 import {KeyboardAvoidingView, Platform, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -24,51 +25,51 @@ export const Payment: React.FC<PaymentProps> = ({navigation}) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}>
       <ScrollView>
-        <Text style={styles.header}>Your data</Text>
+        <Text style={styles.header}>{texts.paymentScreen.yourData}</Text>
         <InputField
-          name={'first name'}
+          name={texts.paymentScreen.firstName}
           prop={firstName}
           setProp={setFirstName}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'last name'}
+          name={texts.paymentScreen.lastName}
           prop={lastName}
           setProp={setLastName}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'email'}
+          name={texts.paymentScreen.email}
           prop={email}
           setProp={setEmail}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'postcode'}
+          name={texts.paymentScreen.postcode}
           prop={postcode}
           setProp={setPostcode}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'adress'}
+          name={texts.paymentScreen.adress}
           prop={adress}
           setProp={setAdress}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'city'}
+          name={texts.paymentScreen.city}
           prop={city}
           setProp={setCity}
           viewWarnings={viewWarnings}
         />
         <InputField
-          name={'phone'}
+          name={texts.paymentScreen.phone}
           prop={phone}
           setProp={setPhone}
           viewWarnings={viewWarnings}
         />
         <Button
-          text="next step"
+          text={texts.paymentScreen.nextStep}
           onPress={() => {
             if (
               firstName

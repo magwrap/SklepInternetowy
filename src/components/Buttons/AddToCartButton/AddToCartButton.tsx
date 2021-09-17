@@ -1,4 +1,5 @@
 import {AddedToBasketInfo} from '@/components/AddedToBaskedInfo/AddedToBasketInfo';
+import {texts} from '@/config/Texts';
 import {useCartContext} from '@/hooks/CartProvider';
 import {ProductProps} from '@/models/product';
 import React, {useState} from 'react';
@@ -10,7 +11,7 @@ import {styles} from './styles';
 interface AddToCartButtonProps {
   item: ProductProps;
 }
-//TODO: po dodaniu alert ze dodano - pytanie czy konytuowac zakupy czy isc do kasy
+
 export const AddToCartButton: React.FC<AddToCartButtonProps> = ({item}) => {
   const [quantity, setQuantity] = useState(1);
   const [showInfo, setShowInfo] = useState(false);
@@ -29,7 +30,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({item}) => {
         style={styles}
       />
       <Button
-        text="Add to Cart"
+        text={texts.addToCartButton}
         onPress={() => {
           updateCart(item, quantity);
           viewInfo();

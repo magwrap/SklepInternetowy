@@ -6,17 +6,19 @@ import {styles} from './styles';
 import {CartListHeader} from '@/components/Headers/CartListHeader/CartListHeader';
 import {CartListFooter} from '@/components/CartListFooter/CartListFooter';
 import {GoToPaymentButton} from '@/components/Buttons/GoToPaymentButton/GoToPaymentButton';
+import {texts} from '@/config/Texts';
 
 interface CartProps {
   navigation: any;
 }
-//TODO: dodac alert wyswietlajacy sie gdy nie ma zadnych produ
 export const Cart: React.FC<CartProps> = ({navigation}) => {
   const {cart} = useCartContext();
   const emptyCart = cart.length > 1;
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, styles.header]}>Your Cart</Text>
+      <Text style={[styles.text, styles.header]}>
+        {texts.cartScreen.headline}
+      </Text>
       {emptyCart ? (
         <FlatList
           data={cart}
@@ -26,7 +28,7 @@ export const Cart: React.FC<CartProps> = ({navigation}) => {
           ListFooterComponent={() => <CartListFooter />}
         />
       ) : (
-        <Text>Your cart is empty</Text>
+        <Text>{texts.cartScreen.emptyCart}</Text>
       )}
 
       <GoToPaymentButton navigation={navigation} disabled={emptyCart} />

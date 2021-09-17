@@ -4,6 +4,7 @@ import {HomeStack} from './HomeStack';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {ShopStack} from './ShopStack';
 import {Colors} from '@/config/Colors';
+import {texts} from '@/config/Texts';
 
 type MainTabsParamList = {
   HomeStack: undefined;
@@ -36,8 +37,20 @@ export const MainTabs: React.FC = ({}) => {
           paddingBottom: 5,
         },
       }}>
-      <Tabs.Screen name="HomeStack" component={HomeStack} />
-      <Tabs.Screen name="ShopStack" component={ShopStack} />
+      <Tabs.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{
+          title: texts.headerTitles.Home,
+        }}
+      />
+      <Tabs.Screen
+        name="ShopStack"
+        component={ShopStack}
+        options={{
+          title: texts.headerTitles.Shop,
+        }}
+      />
     </Tabs.Navigator>
   );
 };

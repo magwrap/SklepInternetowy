@@ -1,3 +1,4 @@
+import {texts} from '@/config/Texts';
 import React from 'react';
 import {View, Text} from 'react-native';
 import {styles} from './styles';
@@ -8,11 +9,10 @@ interface WarningsProps {
 }
 
 export const WarningText: React.FC<WarningsProps> = ({prop, viewWarnings}) => {
-  const requiredField = 'This field is required';
   return (
     <View style={styles.warningField}>
       <Text style={styles.warningText}>
-        {prop || !viewWarnings ? '' : requiredField}
+        {prop || !viewWarnings ? '' : texts.warningText}
       </Text>
     </View>
   );

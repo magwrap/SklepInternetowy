@@ -6,7 +6,7 @@ interface CartContextProps {
   updateCart: (item: ProductProps, quantity: number) => void;
   clearCart: () => void;
 }
-//TODO: naprawic typescrpit bledy
+
 const CartContext = createContext<CartContextProps>({});
 
 export const useCartContext = () => useContext(CartContext);

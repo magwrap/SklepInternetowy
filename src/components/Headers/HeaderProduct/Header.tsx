@@ -1,4 +1,5 @@
 import {Button} from '@/components/Button';
+import {texts} from '@/config/Texts';
 import {goToCart} from '@/hooks/goToCart';
 import React from 'react';
 import {headerStyling} from '../headerStyling';
@@ -18,7 +19,10 @@ export const HeaderProduct: Object = ({route, navigation}: HeaderProps) => {
   return {
     title: route.params.data.name,
     headerRight: () => (
-      <Button onPress={() => goToCart(navigation)} text={'Go to checkout'} />
+      <Button
+        onPress={() => goToCart(navigation)}
+        text={texts.headerGoToCheckout}
+      />
     ),
     ...headerStyling,
   };

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     margin: 5,
     borderBottomWidth: 1,
+    marginRight: 15,
   },
   name: {
     fontSize: 20,
@@ -19,13 +20,16 @@ export const styles = StyleSheet.create({
   bigText: {
     fontSize: 20,
   },
-  image: {
-    width: 100,
-    height: 100,
-    margin: 10,
-  },
 
   info: {
+    paddingLeft: 10,
+    marginRight: 10,
+    alignSelf: 'center',
     flexDirection: 'column',
+  },
+  left: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 });

@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     padding: 10,
-    width: 120,
+    width: 100,
     height: 75,
   },
   text: {

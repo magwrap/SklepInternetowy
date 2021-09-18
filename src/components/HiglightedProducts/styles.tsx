@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 import {Colors} from '@/config/Colors';
 
 export const styles = StyleSheet.create({
-  container: {},
   text: {
     fontSize: 13,
     color: Colors.blue,
@@ -15,8 +14,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   bigText: {
-    fontSize: 20,
     color: Colors.black,
+    fontSize: 30,
     textAlign: 'center',
+    fontWeight: 'bold',
+    padding: 5,
   },
 });

@@ -1,3 +1,4 @@
+import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -9,7 +10,7 @@ export const styles = StyleSheet.create({
   },
   bigFont: {
     padding: 2,
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
   },
   title: {
@@ -21,17 +22,19 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 400,
+    height: 300,
   },
 
   section: {
-    borderWidth: 1,
+    borderBottomWidth: 1,
     padding: 10,
     paddingLeft: 13,
   },
   important: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    textShadowRadius: 5,
+    textDecorationLine: 'underline',
   },
   name: {
     justifyContent: 'center',

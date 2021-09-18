@@ -1,3 +1,4 @@
+import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -8,14 +9,17 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    borderWidth: 1,
-    padding: 5,
-    borderRadius: 10,
+    padding: 15,
+    borderRadius: 20,
     justifyContent: 'center',
+    backgroundColor: Colors.green,
+
+    alignSelf: 'center',
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
+    color: Colors.realWhite,
   },
   count: {
     flex: 1,
@@ -27,11 +31,12 @@ export const styles = StyleSheet.create({
 
   countButtons: {
     width: 50,
+    marginLeft: 5,
   },
   textCount: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    paddingLeft: 20,
-    paddingRight: 20,
+    fontSize: 30,
+    textAlign: 'center',
+    width: 60,
+    marginRight: 15,
   },
 });

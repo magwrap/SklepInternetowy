@@ -14,7 +14,6 @@ interface HeaderProps {
 }
 export const HeaderCart: Object = ({route, navigation}: HeaderProps) => {
   const name = JSON.stringify(route.params);
-  console.log(name);
   return {
     title: texts.headerTitles[route.params.name],
     ...headerStyling,

@@ -8,6 +8,7 @@ import {useCartContext} from '@/hooks/CartProvider';
 import {ProductProps} from '@/models/product';
 import {goToCart} from '@/hooks/goToCart';
 import {texts} from '@/config/Texts';
+import {textStyles} from '@/styles/textStyles';
 
 interface OffersProps {
   navigation: any;
@@ -19,7 +20,7 @@ export const Offers: React.FC<OffersProps> = ({navigation}) => {
   const item: ProductProps = dummyData[5];
   return (
     <Card>
-      <Text style={styles.bigText}>{texts.offersHeadline}</Text>
+      <Text style={textStyles.bigText}>{texts.offersHeadline}</Text>
       <Text style={[styles.bigText, styles.promotion]}>
         {texts.offersPromotion}
       </Text>

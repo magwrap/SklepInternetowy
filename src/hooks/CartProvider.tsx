@@ -29,8 +29,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({children}) => {
     const newCart = cart.map(item => {
       let quant = item.quantity;
       if (item.product.id === product.id) {
-        quant += quantity;
         inCart = true;
+        if (quant < 99) {
+          quant += quantity;
+        }
       }
       return {product: item.product, quantity: quant};
     });

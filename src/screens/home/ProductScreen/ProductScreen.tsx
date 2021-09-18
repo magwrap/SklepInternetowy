@@ -35,13 +35,15 @@ export const ViewProduct: React.FC<ProductScreenProps> = ({route}) => {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.bigFont}>{texts.productScreen.description}</Text>
+          <Text style={[styles.bigFont, styles.important]}>
+            {texts.productScreen.description}
+          </Text>
           <Text style={[styles.text, styles.paragraph]}>
             {data.description}
           </Text>
         </View>
         <View style={styles.section}>
-          <Text style={styles.bigFont}>
+          <Text style={[styles.bigFont, styles.important]}>
             {texts.productScreen.specifications}
           </Text>
           <Text style={[styles.text, styles.paragraph]}>

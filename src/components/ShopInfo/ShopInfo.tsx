@@ -4,6 +4,7 @@ import {Image} from 'react-native';
 import {styles} from './styles';
 import {Card} from '@/components/Card/Card';
 import {texts} from '@/config/Texts';
+import {textStyles} from '@/styles/textStyles';
 
 interface ShopInfoProps {}
 
@@ -13,7 +14,7 @@ export const ShopInfo: React.FC<ShopInfoProps> = ({}) => {
   };
   return (
     <Card>
-      <Text style={[styles.text, styles.bigText]}>{texts.shopName}</Text>
+      <Text style={textStyles.bigText}>{texts.shopName}</Text>
       <Text style={styles.text}>{texts.shopDescription}</Text>
       <Image style={styles.image} source={photo} />
     </Card>

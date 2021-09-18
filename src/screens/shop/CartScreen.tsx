@@ -23,7 +23,9 @@ export const Cart: React.FC<CartProps> = ({navigation}) => {
         <FlatList
           data={cart}
           keyExtractor={item => JSON.stringify(item.product.id)}
-          renderItem={({item}) => <ViewCart item={item} />}
+          renderItem={({item}) => (
+            <ViewCart item={item} navigation={navigation} />
+          )}
           ListHeaderComponent={() => <CartListHeader />}
           ListFooterComponent={() => <CartListFooter />}
         />

@@ -19,6 +19,7 @@ export const QuantityChanger: React.FC<QuantityChangerProps> = ({
   style,
   goBelowOne = false,
 }) => {
+  const maxProductQuantity = 99;
   const goUp = () => {
     setQuantity(quantity + 1);
   };
@@ -31,7 +32,12 @@ export const QuantityChanger: React.FC<QuantityChangerProps> = ({
   return (
     <View style={style.count}>
       <View style={style.countButtons}>
-        <Button text={'↑'} onPress={goUp} style={styles} />
+        <Button
+          text={'↑'}
+          onPress={goUp}
+          style={styles}
+          disabled={maxProductQuantity === quantity}
+        />
         <Button text={'↓'} onPress={goDown} style={styles} />
       </View>
       <Text style={style.textCount}>{quantity}</Text>

@@ -1,18 +1,21 @@
 import {AddedToBasketInfo} from '@/components/AddedToBaskedInfo/AddedToBasketInfo';
-import {texts} from '@/config/Texts';
 import {useCartContext} from '@/hooks/CartProvider';
 import {ProductProps} from '@/models/product';
 import React, {useState} from 'react';
-import {View} from 'react-native';
-import {Button} from '../../Button';
+import {Image, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {QuantityChanger} from '../../QuantityChanger/QuantityChanger';
 import {styles} from './styles';
 
 interface AddToCartButtonProps {
   item: ProductProps;
+  viewQuantity?: boolean;
 }
 
-export const AddToCartButton: React.FC<AddToCartButtonProps> = ({item}) => {
+export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
+  item,
+  viewQuantity = true,
+}) => {
   const [quantity, setQuantity] = useState(1);
   const [showInfo, setShowInfo] = useState(false);
   const {updateCart} = useCartContext();
@@ -24,19 +27,21 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({item}) => {
 
   return (
     <View style={styles.container}>
-      <QuantityChanger
-        quantity={quantity}
-        setQuantity={setQuantity}
-        style={styles}
-      />
-      <Button
-        text={texts.addToCartButton}
+      {viewQuantity && (
+        <QuantityChanger
+          quantity={quantity}
+          setQuantity={setQuantity}
+          style={styles}
+        />
+      )}
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => {
           updateCart(item, quantity);
           viewInfo();
-        }}
-        style={styles}
-      />
+        }}>
+        <Image source={require('@/assets/shopping-cart.png')} />
+      </TouchableOpacity>
 
       {showInfo && <AddedToBasketInfo />}
     </View>

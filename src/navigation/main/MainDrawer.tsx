@@ -3,6 +3,7 @@ import {MainTabs} from './MainTabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {CartStack} from './CartStack';
+import {Colors} from '@/config/Colors';
 
 type MainTabsParamList = {
   MainTabs: undefined;
@@ -18,7 +19,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({}) => {
     <Drawer.Navigator
       initialRouteName="MainTabs"
       drawerStyle={{
-        backgroundColor: '#c6cbef',
+        backgroundColor: Colors.black,
         width: 240,
       }}
       drawerContent={props => <DrawerContent {...props} />}>

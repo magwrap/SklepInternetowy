@@ -4,7 +4,7 @@ import {Text, ActivityIndicator} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {AuthStack} from '@/navigation/auth/AuthStack';
 import {useAuthContext} from '@/hooks/AuthProvider';
-import {MainTabs} from './main/MainTabs';
+import {MainDrawer} from './main/MainDrawer';
 
 export const AppNavigator = () => {
   const {user} = useAuthContext();
@@ -26,7 +26,13 @@ export const AppNavigator = () => {
   }
   return (
     <NavigationContainer>
-      {user ? <MainTabs /> : <AuthStack />}
+      {user ? (
+        <>
+          <MainDrawer />
+        </>
+      ) : (
+        <AuthStack />
+      )}
     </NavigationContainer>
   );
 };

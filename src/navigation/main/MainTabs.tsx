@@ -1,12 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeStack} from './HomeStack';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {ShopStack} from './ShopStack';
 import {Colors} from '@/config/Colors';
-import {texts} from '@/config/Texts';
+import {MainRoutes} from './MainRoutes';
 
-type MainTabsParamList = {
+export type MainTabsParamList = {
   HomeStack: undefined;
   ShopStack: undefined;
 };
@@ -37,20 +35,7 @@ export const MainTabs: React.FC = ({}) => {
           paddingBottom: 5,
         },
       }}>
-      <Tabs.Screen
-        name="HomeStack"
-        component={HomeStack}
-        options={{
-          title: texts.headerTitles.Home,
-        }}
-      />
-      <Tabs.Screen
-        name="ShopStack"
-        component={ShopStack}
-        options={{
-          title: texts.headerTitles.Shop,
-        }}
-      />
+      {MainRoutes(Tabs)}
     </Tabs.Navigator>
   );
 };

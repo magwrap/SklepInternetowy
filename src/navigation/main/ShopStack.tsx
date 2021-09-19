@@ -4,7 +4,6 @@ import {ViewProduct} from '@/screens/home/ProductScreen/ProductScreen';
 import {HeaderProduct} from '@/components/Headers/HeaderProduct/Header';
 import {Shop} from '@/screens/shop/ShopScreen';
 import {HeaderShop} from '@/components/Headers/HeaderShop/Header';
-import {CartStack} from './CartStack';
 
 type ShopStackParamList = {
   Shop: undefined;
@@ -24,13 +23,6 @@ export const ShopStack: React.FC<ShopStackProps> = ({}) => {
         name="ViewProduct"
         component={ViewProduct}
         options={HeaderProduct}
-      />
-      <Stack.Screen
-        name="CartStack"
-        component={CartStack}
-        options={{
-          header: () => null,
-        }}
       />
     </Stack.Navigator>
   );

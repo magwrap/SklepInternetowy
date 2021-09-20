@@ -16,7 +16,7 @@ export const Cart: React.FC<CartProps> = ({navigation}) => {
   const emptyCart = cart.length > 1;
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, styles.header]}>
+      <Text style={[styles.text, styles.header, {textAlign: 'left'}]}>
         {texts.cartScreen.headline}
       </Text>
       {emptyCart ? (

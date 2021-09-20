@@ -98,7 +98,7 @@ export const texts = {
 
   inputFieldPlaceholder: 'Wprowadź',
   warningText: 'To pole jest wymagane',
-  logout: 'Wyloguj',
+  logout: 'wyloguj ',
 
   headerTitles: {
     Shop: 'Sklep',

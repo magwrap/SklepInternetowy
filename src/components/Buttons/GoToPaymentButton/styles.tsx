@@ -1,5 +1,6 @@
+import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
-//TODO: poprawic wyglad przycisku GoToPayment
+
 export const styles = StyleSheet.create({
   button: {
     position: 'absolute',
@@ -11,11 +12,11 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderTopLeftRadius: 10,
     borderEndWidth: 2,
-    backgroundColor: '#666',
+    backgroundColor: Colors.green,
     borderColor: 'black',
   },
   text: {
     fontSize: 20,
-    color: 'white',
+    color: Colors.black,
   },
 });

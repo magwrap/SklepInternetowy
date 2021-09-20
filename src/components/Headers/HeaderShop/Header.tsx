@@ -1,21 +1,14 @@
 import React from 'react';
-
 import {headerStyling} from '../headerStyling';
-import {Button} from '@/components/Button';
-import {goToCart} from '@/hooks/goToCart';
 import {texts} from '@/config/Texts';
-import {OpenDrawer} from '@/components/OpenDrawer';
+import {OpenDrawerButton} from '@/components/Buttons/OpenDrawerButton';
+import {GoToCartButton} from '@/components/Buttons/GoToCartButton';
 
 export const HeaderShop: Object = ({navigation}: any) => {
   return {
     title: texts.headerTitles.Shop,
-    headerRight: () => (
-      <Button
-        onPress={() => goToCart(navigation)}
-        text={texts.headerGoToCheckout}
-      />
-    ),
-    headerLeft: () => <OpenDrawer navigation={navigation} />,
+    headerRight: () => <GoToCartButton navigation={navigation} />,
+    headerLeft: () => <OpenDrawerButton navigation={navigation} />,
     ...headerStyling,
   };
 };

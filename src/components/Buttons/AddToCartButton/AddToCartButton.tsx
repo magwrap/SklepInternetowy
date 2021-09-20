@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import {Image, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {QuantityChanger} from '../../QuantityChanger/QuantityChanger';
+import Entypo from 'react-native-vector-icons/Entypo';
 import {styles} from './styles';
 
 interface AddToCartButtonProps {
@@ -42,7 +43,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           updateCart(item, quantity);
           viewInfo();
         }}>
-        <Image source={require('@/assets/shopping-cart.png')} />
+        <Entypo name="shopping-cart" size={27} color={'black'} />
       </TouchableOpacity>
 
       {showInfo && <AddedToBasketInfo />}

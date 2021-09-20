@@ -1,17 +1,15 @@
 import React from 'react';
-import {useAuthContext} from '@/hooks/AuthProvider';
 
 import {headerStyling} from '../headerStyling';
-import {Button} from '@/components/Button';
 import {texts} from '@/config/Texts';
-import {OpenDrawer} from '@/components/OpenDrawer';
+import {OpenDrawerButton} from '@/components/Buttons/OpenDrawerButton';
+import {LogoutButton} from '@/components/Buttons/LogoutButton';
 
 export const HeaderHome: Object = ({navigation}: any) => {
-  const {logout} = useAuthContext();
   return {
     title: texts.headerTitles.Home,
-    headerRight: () => <Button onPress={() => logout()} text={texts.logout} />,
-    headerLeft: () => <OpenDrawer navigation={navigation} />,
+    headerRight: () => <LogoutButton />,
+    headerLeft: () => <OpenDrawerButton navigation={navigation} />,
     ...headerStyling,
   };
 };

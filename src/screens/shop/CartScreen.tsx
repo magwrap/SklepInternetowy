@@ -30,7 +30,9 @@ export const Cart: React.FC<CartProps> = ({navigation}) => {
           ListFooterComponent={() => <CartListFooter />}
         />
       ) : (
-        <Text>{texts.cartScreen.emptyCart}</Text>
+        <Text style={[styles.text, styles.textEmptyCart]}>
+          {texts.cartScreen.emptyCart}
+        </Text>
       )}
 
       <GoToPaymentButton navigation={navigation} disabled={emptyCart} />

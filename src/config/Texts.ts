@@ -22,12 +22,21 @@ export const texts = {
   productScreen: {
     description: 'Opis :',
     specifications: 'Specyfikacje :',
+    specs: {
+      lengthCM: 'Długość (w cm) :',
+      weightG: 'Waga (w gramach) :',
+      application: 'Zastosowanie :',
+      temperature: 'Temperatura :',
+      veins: 'Ilość żyłek :',
+      lengthUnit: ' cm',
+      weightUnit: ' g',
+    },
   },
 
   addedToBasketInfo: 'Dodano do koszyka',
   addToCartButton: 'Dodaj do koszyka',
 
-  headerGoToCheckout: 'Idź do kasy',
+  headerGoToCheckout: 'Koszyk',
   buy: 'Kup',
 
   cartScreen: {

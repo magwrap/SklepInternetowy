@@ -47,11 +47,17 @@ export const DrawerContent = (
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: Colors.black,
-    borderBottomWidth: 1,
+    backgroundColor: Colors.lightBlack,
+    borderBottomWidth: 3,
+    borderRightWidth: 3.3,
+    borderBottomRightRadius: 30,
     borderColor: Colors.yellow,
+    marginBottom: 10,
   },
   itemLabel: {
     color: Colors.realWhite,
+    padding: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });

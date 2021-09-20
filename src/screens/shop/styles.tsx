@@ -22,4 +22,11 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.green,
     shadowRadius: 20,
   },
+  textEmptyCart: {
+    fontWeight: '100',
+    fontSize: 17,
+    alignSelf: 'center',
+    fontStyle: 'italic',
+    marginTop: 60,
+  },
 });

@@ -1,5 +1,5 @@
 import {CartProductProps} from '@/models/product';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {QuantityChanger} from '../QuantityChanger/QuantityChanger';
 import {useCartContext} from '@/hooks/CartProvider';
@@ -15,6 +15,10 @@ interface ViewCartProps {
 export const ViewCart: React.FC<ViewCartProps> = ({item, navigation}) => {
   const [quantity, setQuantity] = useState(item.quantity);
   const {updateCart} = useCartContext();
+
+  useEffect(() => {
+    setQuantity(item.quantity);
+  }, [item]);
 
   if (item.quantity == 0) {
     return null;

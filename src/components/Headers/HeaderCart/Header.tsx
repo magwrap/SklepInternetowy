@@ -1,3 +1,4 @@
+import {Text} from '@/components/atoms';
 import {Button} from '@/components/Button';
 import {texts} from '@/config/Texts';
 import React from 'react';
@@ -13,10 +14,10 @@ interface HeaderProps {
   navigation: any;
 }
 export const HeaderCart: Object = ({route, navigation}: HeaderProps) => {
-  const name = JSON.stringify(route.params);
   return {
     title: texts.headerTitles[route.params.name],
     ...headerStyling,
+
     headerLeft: () => (
       <Button
         text={route.params.name === 'Cart' ? 'X' : '<-'}

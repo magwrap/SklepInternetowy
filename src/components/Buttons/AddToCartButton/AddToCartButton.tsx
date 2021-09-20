@@ -28,11 +28,13 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   return (
     <View style={styles.container}>
       {viewQuantity && (
-        <QuantityChanger
-          quantity={quantity}
-          setQuantity={setQuantity}
-          style={styles}
-        />
+        <View>
+          <QuantityChanger
+            quantity={quantity}
+            setQuantity={setQuantity}
+            style={styles}
+          />
+        </View>
       )}
       <TouchableOpacity
         style={styles.button}

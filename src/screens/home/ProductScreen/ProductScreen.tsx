@@ -5,6 +5,7 @@ import {View, Text, ScrollView, Image} from 'react-native';
 import {styles} from './styles';
 import {ProductProps} from '@/models/product';
 import {texts} from '@/config/Texts';
+import {ViewSpecs} from '@/components/ViewSpecs/ViewSpecs';
 
 interface ProductScreenProps {
   route: {
@@ -31,11 +32,13 @@ export const ViewProduct: React.FC<ProductScreenProps> = ({route}) => {
               {data.price} {texts.currency}
             </Text>
           </View>
+
           <AddToCartButton item={data} />
         </View>
 
-        <View style={styles.section}>
-          <Text style={[styles.bigFont, styles.important]}>
+        <View style={[styles.section, , styles.bgColor]}>
+          <Text
+            style={[styles.bigFont, styles.important, , {marginBottom: 10}]}>
             {texts.productScreen.description}
           </Text>
           <Text style={[styles.text, styles.paragraph]}>
@@ -43,12 +46,10 @@ export const ViewProduct: React.FC<ProductScreenProps> = ({route}) => {
           </Text>
         </View>
         <View style={styles.section}>
-          <Text style={[styles.bigFont, styles.important]}>
+          <Text style={[styles.bigFont, styles.important, {marginBottom: 10}]}>
             {texts.productScreen.specifications}
           </Text>
-          <Text style={[styles.text, styles.paragraph]}>
-            dodac tabelke wyswietlajaca specyfikacje
-          </Text>
+          <ViewSpecs specs={data.specifications} />
         </View>
       </ScrollView>
     </View>

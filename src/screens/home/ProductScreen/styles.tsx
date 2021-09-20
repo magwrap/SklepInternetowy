@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     letterSpacing: 1.2,
   },
   paragraph: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '100',
   },
   image: {
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   important: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    textShadowRadius: 5,
+    textShadowRadius: 2,
     textDecorationLine: 'underline',
   },
   name: {
@@ -43,5 +43,8 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
     fontSize: 15,
     marginLeft: 5,
+  },
+  bgColor: {
+    backgroundColor: Colors.lightGray,
   },
 });

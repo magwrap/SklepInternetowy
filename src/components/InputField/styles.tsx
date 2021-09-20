@@ -1,3 +1,4 @@
+import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -17,10 +18,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 3,
     fontSize: 20,
+    backgroundColor: Colors.realWhite,
   },
 
   label: {
     padding: 2,
     marginLeft: 5,
+    fontWeight: '100',
   },
 });

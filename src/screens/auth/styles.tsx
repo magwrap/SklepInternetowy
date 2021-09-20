@@ -1,3 +1,4 @@
+import {Colors} from '@/config/Colors';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -16,14 +17,16 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   button: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 7,
     padding: 15,
     margin: 5,
+    backgroundColor: Colors.gray,
   },
 
   inputField: {
     margin: 10,
+    backgroundColor: Colors.realWhite,
   },
 
   input: {

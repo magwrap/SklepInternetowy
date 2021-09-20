@@ -19,7 +19,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({}) => {
     <Drawer.Navigator
       initialRouteName="MainTabs"
       drawerStyle={{
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.lightGray,
         width: 240,
       }}
       drawerContent={props => <DrawerContent {...props} />}>

@@ -47,15 +47,15 @@ export const DrawerContent = (
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: Colors.lightBlack,
-    borderBottomWidth: 3,
-    borderRightWidth: 3.3,
-    borderBottomRightRadius: 30,
-    borderColor: Colors.yellow,
+    backgroundColor: Colors.thinYellow,
+    borderBottomWidth: 1,
+    borderRightWidth: 1.3,
+    borderBottomRightRadius: 10,
+    borderColor: Colors.lightBlack,
     marginBottom: 10,
   },
   itemLabel: {
-    color: Colors.realWhite,
+    color: Colors.lightBlack,
     padding: 5,
     fontSize: 16,
     fontWeight: 'bold',

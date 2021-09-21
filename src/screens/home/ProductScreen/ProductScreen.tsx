@@ -14,7 +14,7 @@ interface ProductScreenProps {
     };
   };
 }
-//TODO: dodac tabelke wyswietlajaca specyfikacje
+
 export const ViewProduct: React.FC<ProductScreenProps> = ({route}) => {
   const data = route.params.data;
   const photo = {

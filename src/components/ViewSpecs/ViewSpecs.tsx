@@ -7,7 +7,7 @@ import {styles} from './styles';
 interface ViewSpecsProps {
   specs: ProductProps['specifications'];
 }
-
+//TODO: poprawic tabelke wyswietlajaca specyfikacje
 export const ViewSpecs: React.FC<ViewSpecsProps> = ({specs}) => {
   return (
     <View style={styles.table}>

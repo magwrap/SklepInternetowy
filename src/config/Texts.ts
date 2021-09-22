@@ -28,8 +28,6 @@ export const texts = {
       application: 'Zastosowanie :',
       temperature: 'Temperatura :',
       veins: 'Ilość żyłek :',
-      lengthUnit: ' cm',
-      weightUnit: ' g',
     },
   },
 

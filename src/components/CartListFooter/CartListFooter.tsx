@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
 import {useCartContext} from '@/hooks/CartProvider';
-import {calculatePrice} from '@/hooks/priceModule';
+import {calculatePrice} from '@/hooks/calculatePrice';
 import {styles} from './styles';
 import {texts} from '@/config/Texts';
 

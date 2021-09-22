@@ -11,6 +11,7 @@ interface ProductsProps {
   navigation: any;
 }
 //TODO: dodac funkcje przyjmujaca 3(maxProducts) id(lub nazwy) i zwraca je jako obiekty do wyswietlenia w highlightach
+
 export const Products: React.FC<ProductsProps> = ({navigation}) => {
   const {dummyData} = useProductContext();
   const maxProducts = 3;

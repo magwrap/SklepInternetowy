@@ -13,7 +13,8 @@ import {textStyles} from '@/styles/textStyles';
 interface OffersProps {
   navigation: any;
 }
-//TODO: dodac funkcje szukajacego produktu z id na przecenie
+//TODO: dodac funkcje szukajaca produktu z id na przecenie
+
 export const Offers: React.FC<OffersProps> = ({navigation}) => {
   const {dummyData} = useProductContext();
   const {updateCart} = useCartContext();
